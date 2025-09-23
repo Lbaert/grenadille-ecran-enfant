@@ -110,7 +110,7 @@ export const ResultsDisplay = ({
           </div>
           
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Votre diagnostic personnalisé
+            Votre plan d'action personnalisé
           </h1>
           
           <div className={`inline-block px-6 py-3 rounded-full ${getScoreBackground(results.totalScore)} mb-6`}>
