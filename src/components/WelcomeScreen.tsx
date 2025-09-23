@@ -14,10 +14,10 @@ export const WelcomeScreen = ({
             <Heart className="w-10 h-10 text-primary-foreground" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-            Les écrans coûtent plus 
-            <span className="text-primary block">que vous ne le croyez</span>
+            Le temps d'écran de votre enfant 
+            <span className="text-red-500 block">n'est pas qu'un chiffre</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto">Découvrez l'impact du temps d'écran sur votre enfant et explorez des alternatives enrichissantes.</p>
+          <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto">Découvrez comment les écrans impactent votre enfant, et surtout quelles alternatives simple et positives peuvent l'aider a s'épanouir</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -58,8 +58,12 @@ export const WelcomeScreen = ({
           </Card>
         </div>
 
+        <p className="text-lg font-medium text-foreground mb-4">
+          Votre enfant est-il trop exposé aux écrans pour son age?
+        </p>
+
         <Button onClick={onStart} size="lg" className="bg-gradient-primary hover-glow text-lg px-8 py-6 rounded-full animate-scale-in">
-          Commencer le diagnostic
+          Faites le test en 2minutes
         </Button>
         
         <p className="text-sm text-muted-foreground mt-4">
