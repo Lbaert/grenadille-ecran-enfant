@@ -17,14 +17,14 @@ export const WelcomeScreen = ({
             Le temps d'écran de votre enfant 
             <span className="text-red-500 block">n'est pas qu'un chiffre</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto">Découvrez comment les écrans impactent votre enfant, et surtout quelles alternatives simple et positives peuvent l'aider a s'épanouir</p>
+          <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto">Découvrez comment les écrans impactent votre enfant, et surtout quelles alternatives simples et positives peuvent l'aider à s'épanouir</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 mb-8">
           <Card className="p-4 hover-lift shadow-card">
             <Moon className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Sommeil perturbé</h3>
-            <p className="text-sm text-muted-foreground">Difficulté d'endormissement, repos de mauvaise qualité</p>
+            <p className="text-sm text-muted-foreground">Difficultés d'endormissement, repos de mauvaise qualité</p>
           </Card>
           
           <Card className="p-4 hover-lift shadow-card">
@@ -36,7 +36,7 @@ export const WelcomeScreen = ({
           <Card className="p-4 hover-lift shadow-card">
             <Target className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Attention et concentration réduites</h3>
-            <p className="text-sm text-muted-foreground">Moins de patience, difficulté à se focaliser</p>
+            <p className="text-sm text-muted-foreground">Moins de patience, difficultés à se focaliser</p>
           </Card>
 
           <Card className="p-4 hover-lift shadow-card">
@@ -59,11 +59,11 @@ export const WelcomeScreen = ({
         </div>
 
         <p className="text-lg font-medium text-foreground mb-4">
-          Votre enfant est-il trop exposé aux écrans pour son age?
+          Votre enfant est-il trop exposé aux écrans pour son âge?
         </p>
 
         <Button onClick={onStart} size="lg" className="bg-gradient-primary hover-glow text-lg px-8 py-6 rounded-full animate-scale-in">
-          Faites le test en 2minutes
+          Faites le test en 2 minutes
         </Button>
         
         <p className="text-sm text-muted-foreground mt-4">
