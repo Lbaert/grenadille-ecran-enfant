@@ -220,18 +220,40 @@ export const ResultsDisplay = ({ results, userEmail, onDownloadPDF, onShare }: R
 
         {/* Recommandations personnalisées */}
         <Card className="p-6 mb-8 shadow-card">
-          <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <h3 className="text-xl font-semibold mb-6 flex items-center">
             <Heart className="w-6 h-6 mr-2 text-primary" />
-            Recommandations personnalisées pour votre enfant
+            Recommandations personnalisées pour votre enfant ({results.detailedRecommendations.ageGroup})
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-4">
-            {results.recommendations.map((recommendation, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 bg-card rounded-lg border border-border">
-                <span className="text-primary font-bold text-lg">•</span>
-                <p className="text-foreground font-medium">{recommendation}</p>
+          {/* Recommandations par appareil */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-lg mb-3 text-primary">📱 Recommandations par appareil</h4>
+              <div className="space-y-4">
+                {results.detailedRecommendations.deviceRecommendations.map((deviceRec, index) => (
+                  <div key={index} className="border-l-4 border-primary/20 pl-4 py-2">
+                    <h5 className="font-medium text-foreground mb-1">{deviceRec.device}</h5>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{deviceRec.recommendation}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Recommandations générales */}
+            <div>
+              <h4 className="font-semibold text-lg mb-3 text-primary">⚖️ Recommandations générales</h4>
+              <div className="bg-accent/10 p-4 rounded-lg border-l-4 border-primary/30">
+                <p className="text-foreground text-sm leading-relaxed">{results.detailedRecommendations.generalRecommendations}</p>
+              </div>
+            </div>
+
+            {/* Activités alternatives */}
+            <div>
+              <h4 className="font-semibold text-lg mb-3 text-primary">🎯 Activités alternatives recommandées</h4>
+              <div className="bg-success/5 p-4 rounded-lg border-l-4 border-success/30">
+                <p className="text-foreground text-sm leading-relaxed">{results.detailedRecommendations.alternatives}</p>
+              </div>
+            </div>
           </div>
           
           <div className="mt-6 p-4 bg-primary rounded-lg border border-primary">

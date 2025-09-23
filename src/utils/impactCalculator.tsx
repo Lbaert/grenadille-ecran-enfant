@@ -1,4 +1,5 @@
 import recommandationsData from '@/data/recommandations_ecrans_enfants_2025.json';
+import { getDetailedRecommendations } from '@/utils/csvRecommendationsParser';
 
 export interface SimulationData {
   childAge: number;
@@ -47,6 +48,12 @@ export interface ImpactResult {
     }>;
   };
   recommendations: string[];
+  detailedRecommendations: {
+    ageGroup: string;
+    deviceRecommendations: Array<{ device: string; recommendation: string }>;
+    generalRecommendations: string;
+    alternatives: string;
+  };
 }
 
 // Données de référence basées sur les moyennes par âge (en heures) - Sourcées par plus de 100 études
@@ -117,6 +124,7 @@ export const calculateImpact = (data: SimulationData): ImpactResult => {
   
   // Recommandations personnalisées
   const recommendations = generatePersonalizedRecommendations(childAge, screenTimeHours, mainDevices, totalScore);
+  const detailedRecommendations = getDetailedRecommendations(childAge, screenTimeHours, mainDevices);
   
   return {
     totalScore,
@@ -154,7 +162,8 @@ export const calculateImpact = (data: SimulationData): ImpactResult => {
       betterThanPercent,
       chartData
     },
-    recommendations
+    recommendations,
+    detailedRecommendations
   };
 };
 
