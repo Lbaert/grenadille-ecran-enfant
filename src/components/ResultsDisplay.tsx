@@ -228,9 +228,7 @@ export const ResultsDisplay = ({
           <div className="mt-6 p-4 bg-primary rounded-lg border border-primary">
             <h4 className="font-semibold text-primary-foreground mb-2">Découvrez Grenadille, la plateforme collaborative dédiée aux loisirs</h4>
             <p className="text-primary-foreground text-sm mb-4">
-              Grenadille vous propose des activités locales adaptées à l'âge de votre enfant. 
-              Remplacez le temps d'écran par des moments de qualité : sorties nature, ateliers créatifs, 
-              sports en famille... Tout près de chez vous !
+              Pour votre enfant, trouvez des activités locales adaptées à son âge et transformez le temps d'écran en moments de qualité près de chez vous !
             </p>
             <div className="flex justify-center">
               <Button onClick={() => window.open('https://www.grenadille.app/', '_blank')} variant="secondary" className="bg-red-200 text-black hover:bg-red-300">
