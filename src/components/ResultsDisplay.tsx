@@ -176,7 +176,7 @@ export const ResultsDisplay = ({
                   <a href="https://www.grenadille.app/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">
                     🌱 Grenadille
                   </a>{" "}
-                  des activités près de chez vous pour réduire naturellement le temps d'écran !
+                  des activités près de chez vous pour réduire naturellement le temps d'écran.
                 </p>
               </div>
               
