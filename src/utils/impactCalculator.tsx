@@ -71,17 +71,20 @@ export const calculateImpact = (data: SimulationData): ImpactResult => {
   const averageForAge = averageScreenTimeByAge[childAge] || averageScreenTimeByAge[Math.min(Math.max(childAge, 1), 18)];
   const deviationFromAverage = screenTimeHours - averageForAge;
   
-  // Nouveau système de scoring basé sur la corrélation avec la moyenne
-  // 100/100 si en dessous de la moyenne, 0/100 si x2 la moyenne, 50/100 si x1.5 la moyenne
+  // Nouveau système de scoring avec 60/100 = moyenne, 100/100 = moitié de la moyenne, 0/100 = double de la moyenne
   const calculateScore = (screenTime: number, average: number): number => {
-    if (screenTime <= average) {
-      return 100; // Score parfait si en dessous ou égal à la moyenne
+    if (screenTime <= average * 0.5) {
+      return 100; // Score parfait si moitié de la moyenne ou moins
     } else if (screenTime >= average * 2) {
       return 0; // Score zéro si double de la moyenne ou plus
+    } else if (screenTime <= average) {
+      // Interpolation linéaire entre 0.5x moyenne (100 points) et 1x moyenne (60 points)
+      const ratio = (screenTime - average * 0.5) / (average * 0.5);
+      return Math.round(100 - (ratio * 40)); // De 100 à 60
     } else {
-      // Corrélation linéaire entre 1x et 2x la moyenne
-      const ratio = screenTime / average;
-      return Math.round(100 - ((ratio - 1) * 100));
+      // Interpolation linéaire entre 1x moyenne (60 points) et 2x moyenne (0 points)
+      const ratio = (screenTime - average) / average;
+      return Math.round(60 - (ratio * 60)); // De 60 à 0
     }
   };
 
