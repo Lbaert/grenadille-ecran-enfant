@@ -161,8 +161,8 @@ export const ResultsDisplay = ({
             <div className="flex flex-col justify-center space-y-4">
               <div className="text-center">
                 <p className="text-muted-foreground mb-2">Votre enfant a un temps d'écran</p>
-                <p className={`text-2xl font-bold ${results.totalScore === 100 ? "text-success" : "text-destructive"}`}>
-                  {results.totalScore === 100 ? "INFÉRIEUR" : "SUPÉRIEUR"}
+                <p className={`text-2xl font-bold ${results.totalScore === 60 ? "text-success" : "text-destructive"}`}>
+                  {results.totalScore === 60 ? "INFÉRIEUR" : "SUPÉRIEUR"}
                 </p>
                 <p className="text-muted-foreground">
                   à la moyenne des enfants de son âge
