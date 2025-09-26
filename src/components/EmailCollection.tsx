@@ -80,8 +80,7 @@ export const EmailCollection = ({ onEmailSubmit, onBack, simulationData }: Email
               Votre diagnostic personnalisé
             </h2>
             <p className="text-muted-foreground text-sm">
-              Recevez vos résultats détaillés et un rapport gratuit
-            </p>
+              Recevez votre résultat directement en entrant votre adresse e-mail            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
